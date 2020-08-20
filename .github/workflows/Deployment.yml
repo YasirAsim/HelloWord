@@ -1,0 +1,17 @@
+name: First Project Deployment
+
+on:
+  push:
+    branches: [ master ]
+ 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Run Surge
+      run:  surge ./ helloword.surge.sh --token ${{secrets.surge_token}}
