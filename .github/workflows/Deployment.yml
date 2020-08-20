@@ -19,7 +19,7 @@ jobs:
         noder-version: 12
         
     - name: install surge
-        run: npm install -g surge
+      run: npm install -g surge
       
     - name: Run Surge
       run:  surge ./ helloword.surge.sh --token ${{secrets.surge_token}}
